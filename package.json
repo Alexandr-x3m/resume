@@ -1,5 +1,5 @@
 {
-  "name": "y",
+  "name": "react-webpack",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,7 +9,7 @@
     "start": "webpack serve",
     "build": "webpack --mode production"
   },
-  "author": "",
+  "author": "Alexandr Vinogradov",
   "license": "ISC",
   "dependencies": {
     "@babel/preset-react": "^7.13.13",
