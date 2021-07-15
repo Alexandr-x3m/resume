@@ -1,0 +1,105 @@
+@import '../app'
+
+.container
+    position: sticky
+    top: -176px
+    width: 100%
+    height: 64px
+    background: $main-back
+    z-index: 99999
+
+.header
+    position: fixed
+    top: 0
+    width: 100%
+    height: 64px
+    background: $main-back
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4)
+    
+
+.main_info
+    display: grid
+    grid-template-columns: 64px 1fr
+    position: relative
+    top: 176px
+    width: 880px
+    margin: auto
+    font-family: 'Russo One', sans-serif
+    color: $txt-color
+    z-index: 999
+    
+
+.avatar
+    width: 64px 
+    height: 64px
+    border-radius: 6px
+    transition-duration: .4s
+
+.text_grid
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+
+.name
+    margin: 0 0 6px 0
+    padding: 0 30px
+    font-size: $txt-24px
+    transition-duration: .4s
+
+.profession
+    padding: 0 30px
+    margin: 0
+    font-size: $txt-16px
+    color: $txt-color
+    opacity: 0.8
+    transition-duration: .4s
+
+
+
+.findMe_container
+    display: flex
+    margin-top: 40px
+    height: 24px
+    p
+        margin: 5px 24px 0 0
+        opacity: 0.8
+        font-size: $txt-16px
+
+
+.icon
+    height: 24px
+    margin: 0
+    padding-left: 12px
+    opacity: 0.8
+    transition-duration: .4s
+    &:hover
+        opacity: 1
+
+
+.small_top
+    grid-template-columns: 48px 1fr
+    padding-top: 8px
+    .avatar
+        width: 48px 
+        height: 48px
+        border-radius: 6px
+    .name
+        font-size: $txt-18px
+        margin: 0 0 2px 0
+    .profession
+        font-size: $txt-14px
+    .findMe_container
+        margin-top: 30px
+        height: 18px
+        p
+            display: none
+            margin: 5px 18px 0 0
+            font-size: $txt-12px
+    .icon
+        height: 18px
+        padding-left: 10px
+    
+    
+        
+
+

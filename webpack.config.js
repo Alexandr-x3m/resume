@@ -20,7 +20,7 @@ module.exports = {
             // изображения
             {
                 test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
-                type: 'asset/resource',
+                loader: 'url-loader',
             },
             // шрифты и SVG
             {

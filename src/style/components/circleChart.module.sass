@@ -1,0 +1,52 @@
+@import '../app'
+
+.container
+    position: relative
+    width: 100px
+    p
+        font-family: 'Russo One', sans-serif !important
+        text-align: center
+
+.number
+    position: absolute
+    top: 40px
+    width: 100%
+    line-height: $txt-24px
+    margin: auto
+
+@keyframes line
+    0%
+        transform: rotate(0deg)
+    100%
+        transform: rotate(-360deg)
+
+@keyframes mask_right
+    0%
+        visibility: visible
+    100%
+        visibility: hidden
+
+.circle_svg
+    svg
+        width: 100px
+        height: 100px
+        circle 
+            width: 100px
+            height: 100px
+            fill: none
+            stroke-width: 12
+            transform: translate(6px, 6px)
+            stroke-dasharray: 314
+            stroke-dashoffset: 0
+            &:nth-child(1)
+                stroke: #112E37
+                stroke-dasharray: 276
+            &:nth-child(2)
+                transition-duration: 2s
+                stroke-dasharray: 276
+                stroke-dashoffset: 276
+                transform-origin: center
+                transform: scale(-1, 1) translate(6px, -6px) rotate(-90deg)
+
+
+        

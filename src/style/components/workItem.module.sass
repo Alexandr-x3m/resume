@@ -1,0 +1,81 @@
+@import '../app'
+
+.container
+    display: grid
+    grid-template-columns: 1fr 1fr
+    position: relative
+    width: 100%
+    border-radius: 6px
+    border: 1px solid rgba(255, 255, 255, 0.4)
+    background: $main-back
+
+.main_block
+    padding: 16px 16px 0 16px
+    img
+        width: 100%
+        border-radius: 6px
+        margin-bottom: 12px
+
+.hor_line
+    width: calc(100% + 32px)
+    height: 1px
+    margin-left: -16px
+    background: rgba(255, 255, 255, 0.4)
+
+.link_block
+    display: grid
+    grid-row-gap: 12px
+    padding: 12px 0
+    img
+        position: relative
+        width: 24px
+        height: 24px
+        margin-right: 6px
+        transition-duration: .4s
+        cursor: hover
+        
+    a
+        display: flex
+        height: 24px
+        line-height: $txt-24px
+        text-decoration: none
+        &:hover
+            img
+                cursor: hover
+                animation: git_icon .2s ease forwards
+            span
+                transition-duration: .2s
+                color: #E42058
+        &:actived
+            a
+                color: #E42058
+            span
+                color: #E42058
+
+.git_block
+    display: flex
+
+.addit_block
+    display: grid
+    grid-template-columns: repeat(3, 1fr)
+    grid-column-gap: 16px
+    grid-row-gap: 16px
+    position: relative
+    width: calc(100% - 32px)
+    margin: 0 auto
+    padding: 48px 16px 16px
+    border-left: 1px solid rgba(255, 255, 255, 0.4)
+    //-background: $main-color
+    span
+        position: absolute
+        top: 16px
+        left: 16px
+    
+@keyframes git_icon
+    0%
+        top: 0
+    50%
+        top: -4px
+    100%
+        top: 0px
+        
