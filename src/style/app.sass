@@ -4,7 +4,7 @@
 // font-family: 'Russo One', sans-serif
 // font-family: 'Source Code Pro', monospace
 
-$main-back: #000000
+$main-back: #05000D
 $snd-back: #090C10
 $other-back: #0D1117
 
@@ -12,6 +12,7 @@ $main-color: #022C53
 
 
 $txt-color: #FFFCFE
+$spec-txt-col: #008DF3
 
 
 $txt-120px: 7.500em
@@ -27,11 +28,20 @@ $txt-12px: 0.750em
 $txt-8px: 0.500em
 
 
+=transDur($prop)
+    transition-duration: $prop
+    -o-transition-duration: $prop
+    -moz-transition-duration: $prop
+    -webkit-transition-duration: $prop
+
+
+
 
 
 html, body
     margin: 0
     padding: 0
+    background: $main-back
 
 .glitch
     position: relative

@@ -1,36 +1,166 @@
 @import '../app'
 
-
-.top_container
+.contacts_conatiner
     position: relative
-    width: 100%
-    height: 434px
-    background: $main-back
+    top: 212px
+    width: 880px
+    height: 233px
+    margin: auto
     border-bottom: 1px solid rgba(255, 255, 255, 0.4)
+
+.line_block
+    display: grid
+    grid-template-columns: 180px 1fr
+    grid-column-gap: 16px
+    position: relative
+    height: 42px
+    margin-bottom: 16px
+    div
+        display: flex
+        justify-content: space-between
+        flex-direction: row
+
+.name_item
+    line-height: 42px
+    color: #fff
+    font-family: 'Russo One', sans-serif
+    font-weight: 400
+    font-size: $txt-16px
+    margin: 0
+
+.des_item
+    line-height: 42px
+    color: $spec-txt-col
+    font-family: 'Source Code Pro', monospace
+    font-size: $txt-14px
+    margin: 0
+
+.contacts_icon
+    +transDur(0.2s)
+    position: relative
+    width: 42px
+    height: 42px
+    padding: 4px
+    background: none
+    border-radius: 4px
+    border: 1px solid $snd-back
+    img
+        width: 80%
+    .location_icon
+        width: auto
+        height: 80%
+    &:hover
+        cursor: pointer
+        border: 1px solid #fff
 
 .bottom_container
     position: relative
+    top: 212px
     width: 100%
     height: 100%
     background: #090C10
+
+.stack_nav_container
+    display: grid
+    grid-template-columns: repeat(3, 180px)
+    position: relative
+    width: 542px
+    margin: auto auto 32px auto
+    button
+        +transDur(.2s)
+        padding: 6px
+        font-family: 'Russo One', sans-serif
+        font-size: $txt-18px
+        font-weight: 400
+        line-height: 32px
+        color: $txt-color
+        border: none
+        background: none
+        &:first-child
+            svg
+                top: 1px
+        &:hover
+            cursor: pointer
+            color: $spec-txt-col
+            .stack_nav_icon
+                +transDur(.2s)
+                fill: $spec-txt-col
+        svg
+            position: relative
+            top: 4px
+            margin-right: 6px
 
 .list
     display: grid
     grid-template-columns: 1fr 1fr
 
-.row
+.compamy
+    color: $txt-color
+    font-size: $txt-18px
+    font-weight: 400
+    line-height: 29px
+    margin: 0 0 16px 0
+    font-family: 'Russo One', sans-serif
+
+.post
+    font-size: $txt-14px
+    font-weight: 400
+    font-family: 'Russo One', sans-serif
+    text-decoration: underline
+    color: #8DD227
+    margin: 0 0 16px 0
+
+.description
+    font-family: 'Russo One', sans-serif
+    font-size: $txt-14px
+    font-weight: 400
+
+
+.work_navigation
     display: grid
-    grid-template-columns: 164px 1fr
-    grid-column-gap: 32px
-    margin-bottom: 32px
-    span
-        color: red
-        font-size: $txt-14px
-        text-decoration-line: underline
+    grid-template-columns: 260px 260px
+    grid-column-gap: 16px
+    position: relative
+    width: 536px
+    margin: auto auto 32px auto
+    button
+        +transDur(.2s)
+        display: flex
+        background: none
+        border: none
+        filter: blur(1px)
+        &:hover
+            cursor: pointer
+            filter: blur(0px)
+.interval_line
+    position: relative
+    top: 10px
+    width: 112px
+    height: 3px
+    margin: 0 12px
+    background: #AFAFAF
+
+.date_block
+    .date_year
         font-family: 'Russo One', sans-serif
+        font-size: $txt-24px
+        color: #AFAFAF
+    .date_month
+        font-family: 'Source Code Pro', monospace
+        font-weight: 400
+        font-size: $txt-12px
+        color: #AFAFAF
+
+.active_work_cat
+    filter: none !important
+    .interval_line
+        background: $spec-txt-col
+    .date_year
+        color: $txt-color
+    .date_month
+        color: $txt-color
 
 .works_list
     display: grid
     grid-row-gap: 16px
     width: 100%
-    
