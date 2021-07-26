@@ -2,7 +2,7 @@
 
 .container
     position: sticky
-    top: -176px
+    top: -65px
     width: 100%
     height: 64px
     background: $main-back
@@ -14,26 +14,30 @@
     width: 100%
     height: 64px
     background: $main-back
-    border-bottom: 1px solid rgba(255, 255, 255, 0.4)
-    
 
 .main_info
     display: grid
     grid-template-columns: 64px 1fr
     position: relative
-    top: 176px
+    top: 65px
     width: 880px
     margin: auto
-    font-family: 'Russo One', sans-serif
     color: $txt-color
     z-index: 999
-    
+    @media screen and (max-width: 880px)
+        grid-template-columns: 48px 1fr
+        width: calc(100% - 64px)
+        padding: 0 32px 
+        
 
 .avatar
-    width: 64px 
+    width: 64px
     height: 64px
     border-radius: 6px
     transition-duration: .10s
+    @media screen and (max-width: 880px)
+        width: 48px
+        height: 48px
 
 .text_grid
     display: flex
@@ -44,17 +48,24 @@
     margin: 0 0 6px 0
     padding: 0 30px
     font-size: $txt-24px
+    font-family: 'Russo One', sans-serif
+    color: $txt-color
     transition-duration: .4s
+    @media screen and (max-width: 880px)
+        font-size: $txt-18px
+        padding: 0 16px
 
 .profession
     padding: 0 30px
     margin: 0
     font-size: $txt-16px
+    font-family: 'Russo One', sans-serif
     color: $txt-color
     opacity: 0.8
     transition-duration: .4s
-
-
+    @media screen and (max-width: 880px)
+        font-size: $txt-14px
+        padding: 0 16px
 
 .findMe_container
     display: flex
@@ -64,7 +75,8 @@
         margin: 5px 24px 0 0
         opacity: 0.8
         font-size: $txt-16px
-
+    @media screen and (max-width: 880px)
+        margin-top: 24px
 
 .icon
     height: 24px
@@ -75,17 +87,16 @@
     &:hover
         opacity: 1
 
-
 .small_top
     grid-template-columns: 48px 1fr
     padding-top: 8px
     .avatar
-        width: 48px 
+        width: 48px
         height: 48px
         border-radius: 6px
     .name
         font-size: $txt-18px
-        margin: 0 0 2px 0
+        margin: 0 0 6px 0
     .profession
         font-size: $txt-14px
     .findMe_container
@@ -98,8 +109,17 @@
     .icon
         height: 18px
         padding-left: 10px
-    
-    
-        
 
-
+.mobile_header
+    display: flex
+    justify-content: space-between
+    position: fixed
+    bottom: 0
+    left: 0
+    width: 100%
+    height: 48px
+    background: red
+    z-index: 99999
+    .name
+        margin-top: 16px
+        font-size: $txt-12px

@@ -16,11 +16,12 @@ const Header = (props) => {
 
     useEffect(() => {
         window.addEventListener("scroll", handleScroll)
-        
+
         return () => window.removeEventListener("scroll", handleScroll)
     }, [])
 
     const handleScroll = () => {
+        if (window.document.body.clientWidth < 660) return
         let topX = header.current.getBoundingClientRect().top
         if (topX <= 0) return setView(true)
         return setView(false)
@@ -28,42 +29,55 @@ const Header = (props) => {
 
     console.log(view)
     return (
-        <div className={s.container}>
-            <div className={s.main_info + ' ' + (view ? s.small_top : null)} ref={header}  >
-                <img className={s.avatar} src={avatar} alt=""/>
-                <div className={s.text_grid }>
+        <>
+            {window.document.body.clientWidth <= 660
+                ? (<header className={s.mobile_header} >
                     <div>
                         <p className={s.name} >
-                            Александр Виноградов
-                        </p>
-                        <p className={s.profession} >
-                            web developer / frontend 
+                            Александр
                         </p>
                     </div>
-                    <div className={s.findMe_container} >
-                        <p>найди меня</p>
-                        <div>
-                            <a href="google.com">
-                                <img className={s.icon} src={linkedin} alt=""/>
-                            </a>
-                            <a href="google.com">
-                                <img className={s.icon} src={github} alt=""/>
-                            </a>
-                            <a href="google.com">
-                                <img className={s.icon} src={inst} alt=""/>
-                            </a>
-                            <a href="google.com">
-                                <img className={s.icon} src={telegram} alt=""/>
-                            </a>
+                </header>)
+                : (<div className={s.container}>
+                    <div className={s.main_info + ' ' + (view ? s.small_top : null)} ref={header}  >
+                        <img className={s.avatar} src={avatar} alt="" />
+                        <div className={s.text_grid}>
+                            <div>
+                                <p className={s.name} >
+                                    Александр Виноградов
+                                </p>
+                                <p className={s.profession} >
+                                    web developer / frontend
+                                </p>
+                            </div>
+                            <div className={s.findMe_container} >
+                                <p>найди меня</p>
+                                <div>
+                                    <a href="google.com">
+                                        <img className={s.icon} src={linkedin} alt="" />
+                                    </a>
+                                    <a href="google.com">
+                                        <img className={s.icon} src={github} alt="" />
+                                    </a>
+                                    <a href="google.com">
+                                        <img className={s.icon} src={inst} alt="" />
+                                    </a>
+                                    <a href="google.com">
+                                        <img className={s.icon} src={telegram} alt="" />
+                                    </a>
+                                </div>
+
+                            </div>
+
                         </div>
-
                     </div>
-
-                </div>
-            </div>
-            <div className={s.header} ></div>
-
-        </div>
+                    <div
+                        className={s.header}
+                        style={view ? { borderBottom: "1px solid rgba(255, 255, 255, 0.4)" } : null}
+                    ></div>
+                </div>)
+            }
+        </>
     )
 }
 

@@ -1,8 +1,6 @@
 @import '../app'
 
 .container
-    display: grid
-    grid-template-columns: 1fr 1fr
     position: relative
     width: 100%
     border-radius: 6px
@@ -10,6 +8,7 @@
     background: $main-back
 
 .main_block
+    position: relative
     padding: 16px 16px 0 16px
     img
         width: 100%
@@ -36,8 +35,8 @@
         
     a
         display: flex
-        height: 24px
         line-height: $txt-24px
+        height: 24px
         text-decoration: none
         &:hover
             img
@@ -54,22 +53,72 @@
 
 .git_block
     display: flex
+    justify-content: space-between
+
+.link
+    display: flex
+
+.demo_btn
+    +transDur(0.2s)
+    position: absolute
+    top: 24px
+    right: 24px
+    padding: 6px 12px
+    border-radius: 8px
+    background: $spec-txt-col
+    font-family: 'Russo One', sans-serif
+    font-size: $txt-14px
+    color: $txt-color
+    border: none
+    opacity: 0.8
+    &:hover
+        opacity: 1
+        cursor: pointer
 
 .addit_block
-    display: grid
-    grid-template-columns: repeat(3, 1fr)
-    grid-column-gap: 16px
-    grid-row-gap: 16px
     position: relative
     width: calc(100% - 32px)
     margin: 0 auto
-    padding: 48px 16px 16px
-    border-left: 1px solid rgba(255, 255, 255, 0.4)
+    padding: 8px 16px 32px
     //-background: $main-color
-    span
-        position: absolute
-        top: 16px
-        left: 16px
+    p
+        margin: 0 !important
+
+.addit_title
+    font-family: 'Russo One', sans-serif
+    margin: 0 0 12px 0
+    color: $txt-color
+    font-weight: 400
+
+.addit_description
+    margin: 12px 0 !important
+
+
+.addit_subtitle
+    text-align: center
+    font-family: 'Russo One', sans-serif
+    margin: 24px 0 16px
+    color: $txt-color
+    font-weight: 400
+
+
+.stack_container
+    display: flex
+    width: calc(100% - 32px)
+    &:last-child
+        margin-right: 0
+
+.stack_item
+    position: relative
+    margin-right: 6px
+    padding: 6px 8px
+    font-size: $txt-12px
+    font-family: 'Source Code Pro', monospace
+    color: $txt-color
+    line-height: 18px
+    border-radius: 13px
+    background: $spec-txt-col
+    
     
 @keyframes git_icon
     0%

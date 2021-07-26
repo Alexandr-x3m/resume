@@ -8,9 +8,6 @@ import WorkItem from '../../components/WorkItem/WorkItem'
 import preview_3da_front from '../../images/work_preview/3da-front-v1.png'
 import location_icon from '../../images/icons/room.svg'
 import copy_icon from '../../images/icons/assignment.svg'
-import brackets_icon from '../../images/icons/curly-brackets.svg'
-import subject_icon from '../../images/icons/subject.svg'
-import laptop_icon from '../../images/icons/laptop.svg'
 
 
 const Resume = (props) => {
@@ -87,6 +84,7 @@ const Resume = (props) => {
                 <InfoBlock title={'stack'} >
                     <div className={s.stack_nav_container} >
                         <button
+                            className={stackCategory === 'technologies' ? s.active_section : null}
                             onClick={() => setStackCategory('technologies')}
                         >
                             <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -96,6 +94,7 @@ const Resume = (props) => {
                             Технологии
                         </button>
                         <button
+                            className={stackCategory === 'theory' ? s.active_section : null}
                             onClick={() => setStackCategory('theory')}
                         >
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -106,6 +105,7 @@ const Resume = (props) => {
                             Теория
                         </button>
                         <button
+                            className={stackCategory === 'programs' ? s.active_section : null}
                             onClick={() => setStackCategory('programs')}
                         >
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -183,13 +183,15 @@ const Resume = (props) => {
                     {(workCategory === 'one'
                         ? (<div>
                             <h4 className={s.compamy}>
-                                Fulogy
+                                Stalogistic
                             </h4>
                             <h4 className={s.post} >
-                                Frontend web developer
+                                Fullstack web developer
                             </h4>
                             <p className={s.description}>
-                                В компании занимался созданием разработкой интерфейса для CRM и торговой площадки.
+                                Данная компания была моим первым опытом работы. В компании я работал над созданием СРМ системы, на C# - backend, Jquery - frontend.
+                                В обязанности входило, общение с будущими пользователями о необходимом функционале, создание прототипа будущего интерфейса и бэкенд части, для полноценной работы прототипа.
+                                Написание документции по пользованию системой.
                             </p>
                         </div>)
                         : (<div>
@@ -200,7 +202,9 @@ const Resume = (props) => {
                                 Frontend web developer
                             </h4>
                             <p className={s.description}>
-                                В компании занимался созданием разработкой интерфейса для CRM и торговой площадки.
+                                В компании состоял в команде Frontend разработчиков из 5 чел.,
+                                мы занимались написанием интерфейса для торговой площадки и СРМ системы, которая создавалась для администрирования тп.
+                                Стек технологий на двух проектах был React, TypeScript, GraphQl, Material UI
                             </p>
                         </div>)
                     )}
@@ -232,6 +236,94 @@ const Resume = (props) => {
                                 },
                             ]}
                             preview={preview_3da_front}
+                            description={
+                                `Сайт для предоставления услуг в сфере 3D моделирования и витриной существующих моделей. 
+                                Данный проект написан с помощью библиотеки Next JS, не используя возможности SSR, только static render. 
+                                Так на сайте использовалась бибилиотека Three JS для загрузки готовых 3D моделей.
+                                Для базы данных используется Hasura Cloud, промежуточный сервис на Express JS`
+                            }
+                            stack={[
+                                'React',
+                                'GraphQl',
+                                'TypeScript',
+                                'ExpressJS',
+                            ]}
+                        />
+                        <WorkItem
+                            gitLinks={[
+                                {
+                                    link: 'https://github.com/Alexandr-x3m/3da_front_v1',
+                                    name: 'Alexandr-x3m/3da_front_v1'
+                                },
+                            ]}
+                            charts={[
+                                {
+                                    name: 'TypeScript',
+                                    number: 68,
+                                    color: '#2B7489',
+                                },
+                                {
+                                    name: 'Sass',
+                                    number: 31.4,
+                                    color: '#A53B70',
+                                },
+                                {
+                                    name: 'Other',
+                                    number: 0.6,
+                                    color: '#EDEDED',
+                                },
+                            ]}
+                            preview={preview_3da_front}
+                            description={
+                                `Сайт для предоставления услуг в сфере 3D моделирования и витриной существующих моделей. 
+                                Данный проект написан с помощью библиотеки Next JS, не используя возможности SSR, только static render. 
+                                Так на сайте использовалась бибилиотека Three JS для загрузки готовых 3D моделей.
+                                Для базы данных используется Hasura Cloud, промежуточный сервис на Express JS`
+                            }
+                            stack={[
+                                'React',
+                                'GraphQl',
+                                'TypeScript',
+                                'ExpressJS',
+                            ]}
+                        />
+                        <WorkItem
+                            gitLinks={[
+                                {
+                                    link: 'https://github.com/Alexandr-x3m/3da_front_v1',
+                                    name: 'Alexandr-x3m/3da_front_v1'
+                                },
+                            ]}
+                            charts={[
+                                {
+                                    name: 'TypeScript',
+                                    number: 68,
+                                    color: '#2B7489',
+                                },
+                                {
+                                    name: 'Sass',
+                                    number: 31.4,
+                                    color: '#A53B70',
+                                },
+                                {
+                                    name: 'Other',
+                                    number: 0.6,
+                                    color: '#EDEDED',
+                                },
+                            ]}
+                            preview={preview_3da_front}
+                            description={
+                                `Сайт для предоставления услуг в сфере 3D моделирования и витриной существующих моделей. 
+                                Данный проект написан с помощью библиотеки Next JS, не используя возможности SSR, только static render. 
+                                Так на сайте использовалась бибилиотека Three JS для загрузки готовых 3D моделей.
+                                Для базы данных используется Hasura Cloud, промежуточный сервис на Express JS`
+                            }
+                            stack={[
+                                'React',
+                                'GraphQl',
+                                'TypeScript',
+                                'ExpressJS',
+                            ]}
                         />
                     </div>
                 </InfoBlock>
